@@ -31,17 +31,17 @@ export class ListPage {
     this.items = [];
     for (let i = 1; i < 11; i++) {
       this.items.push({
-        title: 'Item ' + i,
-        note: 'This is item #' + i,
         icon: this.icons[Math.floor(Math.random() * this.icons.length)],
+        note: 'This is item #' + i,
+        title: 'Item ' + i,
       });
     }
   }
 
-  itemTapped(event, item) {
+  itemTapped(_, item) {
     // That's right, we're pushing to ourselves!
     this.navCtrl.push(ListPage, {
-      item: item,
+      item,
     });
   }
 }
