@@ -125,3 +125,13 @@ npm i -S cordova-android@6.4.0
 ```
 
 Follow [steps at their documentation](https://ionicframework.com/docs/native/image-picker/) and go from there.
+
+## Clean install
+```
+rm -rf .sourcemaps node_modules platforms plugins www
+npm install
+ionic cordova prepare
+ionic cordova build
+ionic cordova build:ios
+```
+Note that if you skip `ionic cordova prepare`, the plugin version could change even if you think you have fixed it in `config.xml` or `package.json`.
